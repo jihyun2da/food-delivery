@@ -41,7 +41,7 @@ logging:
 
 api:
   url:
-    house: house:8081
+    house: localhost:8081
 
 
 server:
@@ -75,6 +75,6 @@ spring:
 
 api:
   url:
-    house: house:8080
+    house: localhost:8080
 
 

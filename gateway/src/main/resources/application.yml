@@ -48,23 +48,23 @@ spring:
     gateway:
       routes:
         - id: house
-          uri: http://house:8080
+          uri: http://localhost:8080
           predicates:
             - Path=/orders/**, /payments/**, 
         - id: store
-          uri: http://store:8080
+          uri: http://localhost:8080
           predicates:
             - Path=/storeOrders/**, /orderLists/**
         - id: delivery
-          uri: http://delivery:8080
+          uri: http://localhost:8080
           predicates:
             - Path=/deliveries/**, /deliveryCounts/**
         - id: customer
-          uri: http://customer:8080
+          uri: http://localhost:8080
           predicates:
             - Path=/notificationLogs/**, /orderStatuses/**
         - id: frontend
-          uri: http://frontend:8080
+          uri: http://localhost:8080
           predicates:
             - Path=/**
       globalcors:
