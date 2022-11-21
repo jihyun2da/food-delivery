@@ -42,12 +42,6 @@ public class StoreOrder  {
     
     
     private String status;
-    
-    
-    
-    
-    
-    private String test;
 
     @PostPersist
     public void onPostPersist(){
