@@ -11,9 +11,13 @@ import OrderDetail from "./components/listers/OrderDetail"
 import StoreOrderManager from "./components/listers/StoreOrderCards"
 import StoreOrderDetail from "./components/listers/StoreOrderDetail"
 
+import OrderListView from "./components/OrderListView"
+import OrderListViewDetail from "./components/OrderListViewDetail"
 import DeliveryManager from "./components/listers/DeliveryCards"
 import DeliveryDetail from "./components/listers/DeliveryDetail"
 
+import DeliveryCountView from "./components/DeliveryCountView"
+import DeliveryCountViewDetail from "./components/DeliveryCountViewDetail"
 import NotificationLogManager from "./components/listers/NotificationLogCards"
 import NotificationLogDetail from "./components/listers/NotificationLogDetail"
 
@@ -50,6 +54,16 @@ export default new Router({
             },
 
             {
+                path: '/orderLists',
+                name: 'OrderListView',
+                component: OrderListView
+            },
+            {
+                path: '/orderLists/:id',
+                name: 'OrderListViewDetail',
+                component: OrderListViewDetail
+            },
+            {
                 path: '/deliveries',
                 name: 'DeliveryManager',
                 component: DeliveryManager
@@ -60,6 +74,16 @@ export default new Router({
                 component: DeliveryDetail
             },
 
+            {
+                path: '/deliveryCounts',
+                name: 'DeliveryCountView',
+                component: DeliveryCountView
+            },
+            {
+                path: '/deliveryCounts/:id',
+                name: 'DeliveryCountViewDetail',
+                component: DeliveryCountViewDetail
+            },
             {
                 path: '/notificationLogs',
                 name: 'NotificationLogManager',

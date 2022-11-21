@@ -15,11 +15,11 @@ spring:
         - id: store
           uri: http://localhost:8082
           predicates:
-            - Path=/storeOrders/**, 
+            - Path=/storeOrders/**, /orderLists/**
         - id: delivery
           uri: http://localhost:8083
           predicates:
-            - Path=/deliveries/**, 
+            - Path=/deliveries/**, /deliveryCounts/**
         - id: customer
           uri: http://localhost:8084
           predicates:
@@ -58,11 +58,11 @@ spring:
         - id: store
           uri: http://store:8080
           predicates:
-            - Path=/storeOrders/**, 
+            - Path=/storeOrders/**, /orderLists/**
         - id: delivery
           uri: http://delivery:8080
           predicates:
-            - Path=/deliveries/**, 
+            - Path=/deliveries/**, /deliveryCounts/**
         - id: customer
           uri: http://customer:8080
           predicates:

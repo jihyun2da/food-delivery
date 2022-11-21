@@ -99,6 +99,26 @@ public class OrderStatusViewHandler {
             e.printStackTrace();
         }
     }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenDelivered_then_UPDATE_4(@Payload Delivered delivered) {
+        try {
+            if (!delivered.validate()) return;
+                // view 객체 조회
+            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(Long.valueOf(delivered.getOrderId()));
+
+            if( orderStatusOptional.isPresent()) {
+                 OrderStatus orderStatus = orderStatusOptional.get();
+            // view 객체에 이벤트의 eventDirectValue 를 set 함
+                orderStatus.setStatus("배달완료");    
+                // view 레파지 토리에 save
+                 orderStatusRepository.save(orderStatus);
+                }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }
 

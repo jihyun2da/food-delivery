@@ -5,10 +5,10 @@ import lombok.Data;
 import java.util.*;
 
 @Data
-public class DeliveryStarted extends AbstractEvent {
+public class OrderPlaced extends AbstractEvent {
 
     private Long id;
-    private String address;
-    private Long orderId;
-    private String riderId;
+    private String foodId;
+    private String customerId;
+    private String preference;
 }

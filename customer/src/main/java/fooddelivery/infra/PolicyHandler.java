@@ -119,6 +119,22 @@ public class PolicyHandler{
         
 
     }
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Delivered'")
+    public void wheneverDelivered_NoticeKakao(@Payload Delivered delivered){
+
+        Delivered event = delivered;
+        System.out.println("\n\n##### listener NoticeKakao : " + delivered + "\n\n");
+
+
+        
+
+        // Sample Logic //
+        NotificationLog.noticeKakao(event);
+        
+
+        
+
+    }
 
 }
 
