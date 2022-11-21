@@ -45,21 +45,6 @@ public class StoreOrder  {
 
     @PostPersist
     public void onPostPersist(){
-
-
-        Cooked cooked = new Cooked(this);
-        cooked.publishAfterCommit();
-
-
-
-        Accepted accepted = new Accepted(this);
-        accepted.publishAfterCommit();
-
-
-
-        Rejected rejected = new Rejected(this);
-        rejected.publishAfterCommit();
-
     }
 
     public static StoreOrderRepository repository(){
@@ -70,12 +55,21 @@ public class StoreOrder  {
 
 
     public void finishCook(){
+        Cooked cooked = new Cooked(this);
+        cooked.setStatus("finish");
+        cooked.publishAfterCommit();
     }
     public void accept(){
+        Accepted accepted = new Accepted(this);
+        accepted.publishAfterCommit();
     }
     public void reject(){
+        Rejected rejected = new Rejected(this);
+        rejected.publishAfterCommit();
     }
     public void startCook(){
+        Cooked cooked = new Cooked(this);
+        cooked.publishAfterCommit();
     }
 
     public static void addOrder(Paid paid){

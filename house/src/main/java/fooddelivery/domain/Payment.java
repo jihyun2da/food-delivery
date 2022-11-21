@@ -3,6 +3,9 @@ package fooddelivery.domain;
 import fooddelivery.domain.Paid;
 import fooddelivery.HouseApplication;
 import javax.persistence.*;
+
+import org.springframework.beans.BeanUtils;
+
 import java.util.List;
 import lombok.Data;
 import java.util.Date;
@@ -36,6 +39,13 @@ public class Payment  {
         Paid paid = new Paid(this);
         paid.publishAfterCommit();
 
+    }
+
+    @PrePersist
+    public void onPrePersist(){
+        Paid paid = new Paid();
+        BeanUtils.copyProperties(this, paid);
+        paid.publish();
     }
 
     public static PaymentRepository repository(){
