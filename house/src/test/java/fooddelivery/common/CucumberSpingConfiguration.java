@@ -1,12 +1,12 @@
 package fooddelivery.common;
 
 
-import fooddelivery.FrontApplication;
+import fooddelivery.HouseApplication;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @CucumberContextConfiguration
-@SpringBootTest(classes = { FrontApplication.class })
+@SpringBootTest(classes = { HouseApplication.class })
 public class CucumberSpingConfiguration {
     
 }

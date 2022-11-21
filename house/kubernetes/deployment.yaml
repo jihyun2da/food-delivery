@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front
+  name: house
   labels:
-    app: front
+    app: house
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: front
+      app: house
   template:
     metadata:
       labels:
-        app: front
+        app: house
     spec:
       containers:
-        - name: front
-          image: username/front:latest
+        - name: house
+          image: username/house:latest
           ports:
             - containerPort: 8080
           readinessProbe:

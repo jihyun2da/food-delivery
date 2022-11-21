@@ -20,7 +20,7 @@ cd /bin
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
-- front
+- house
 - store
 - delivery
 - customer
@@ -33,7 +33,7 @@ mvn spring-boot:run
 ```
 
 ## Test by API
-- front
+- house
 ```
  http :8088/orders id="id" foodId="foodId" customerId="customerId" options="options" address="address" status="status" 
  http :8088/payments id="id" orderId="orderId" 

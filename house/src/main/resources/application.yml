@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: front
+    name: house
 ---
 
 spring:
@@ -27,7 +27,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: front
+          group: house
           destination: fooddelivery
           contentType: application/json
         event-out:
@@ -41,7 +41,7 @@ logging:
 
 api:
   url:
-    front: front:8081
+    house: house:8081
 
 
 server:
@@ -66,7 +66,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: front
+          group: house
           destination: fooddelivery
           contentType: application/json
         event-out:
@@ -75,6 +75,6 @@ spring:
 
 api:
   url:
-    front: front:8080
+    house: house:8080
 
 

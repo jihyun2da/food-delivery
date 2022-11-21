@@ -2,7 +2,7 @@ package fooddelivery.domain;
 
 import fooddelivery.domain.OrderPlaced;
 import fooddelivery.domain.OrderCanceled;
-import fooddelivery.FrontApplication;
+import fooddelivery.HouseApplication;
 import javax.persistence.*;
 import java.util.List;
 import lombok.Data;
@@ -63,7 +63,7 @@ public class Order  {
 
         fooddelivery.external.Payment payment = new fooddelivery.external.Payment();
         // mappings goes here
-        FrontApplication.applicationContext.getBean(fooddelivery.external.PaymentService.class)
+        HouseApplication.applicationContext.getBean(fooddelivery.external.PaymentService.class)
             .pay(payment);
 
 
@@ -87,7 +87,7 @@ public class Order  {
     }
 
     public static OrderRepository repository(){
-        OrderRepository orderRepository = FrontApplication.applicationContext.getBean(OrderRepository.class);
+        OrderRepository orderRepository = HouseApplication.applicationContext.getBean(OrderRepository.class);
         return orderRepository;
     }
 

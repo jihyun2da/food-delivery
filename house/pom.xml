@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fooddelivery</groupId>
-	<artifactId>front</artifactId>
+	<artifactId>house</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>front</name>
+	<name>house</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

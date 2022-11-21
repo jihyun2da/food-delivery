@@ -8,7 +8,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: front
+        - id: house
           uri: http://localhost:8081
           predicates:
             - Path=/orders/**, /payments/**, 
@@ -47,8 +47,8 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: front
-          uri: http://front:8080
+        - id: house
+          uri: http://house:8080
           predicates:
             - Path=/orders/**, /payments/**, 
         - id: store
