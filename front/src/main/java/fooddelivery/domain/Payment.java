@@ -1,7 +1,7 @@
 package fooddelivery.domain;
 
 import fooddelivery.domain.Paid;
-import fooddelivery.PayApplication;
+import fooddelivery.FrontApplication;
 import javax.persistence.*;
 import java.util.List;
 import lombok.Data;
@@ -39,7 +39,7 @@ public class Payment  {
     }
 
     public static PaymentRepository repository(){
-        PaymentRepository paymentRepository = PayApplication.applicationContext.getBean(PaymentRepository.class);
+        PaymentRepository paymentRepository = FrontApplication.applicationContext.getBean(PaymentRepository.class);
         return paymentRepository;
     }
 

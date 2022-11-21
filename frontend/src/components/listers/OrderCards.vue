@@ -71,7 +71,7 @@
                 'foodId': '',
                 'customerId': '',
                 'options': '',
-                'address': {},
+                'address': '',
                 'status': '',
             }
         },
