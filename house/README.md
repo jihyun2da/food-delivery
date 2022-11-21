@@ -1,4 +1,4 @@
-# front
+# house
 
 ## Running in local development environment
 
@@ -10,8 +10,8 @@ mvn spring-boot:run
 
 ```
 mvn package -B -DskipTests
-docker build -t username/front:v1 .
-docker run username/front:v1
+docker build -t username/house:v1 .
+docker run username/house:v1
 ```
 
 ## Push images and running in Kubernetes
@@ -20,15 +20,15 @@ docker run username/front:v1
 docker login 
 # in case of docker hub, enter your username and password
 
-docker push username/front:v1
+docker push username/house:v1
 ```
 
 Edit the deployment.yaml under the /kubernetes directory:
 ```
     spec:
       containers:
-        - name: front
-          image: username/front:latest   # change this image name
+        - name: house
+          image: username/house:latest   # change this image name
           ports:
             - containerPort: 8080
 
@@ -41,13 +41,13 @@ kubectl apply -f kubernetes/deployment.yaml
 
 See the pod status:
 ```
-kubectl get pods -l app=front
+kubectl get pods -l app=house
 ```
 
 If you have no problem, you can connect to the service by opening a proxy between your local and the kubernetes by using this command:
 ```
 # new terminal
-kubectl port-forward deploy/front 8080:8080
+kubectl port-forward deploy/house 8080:8080
 
 # another terminal
 http localhost:8080
@@ -55,7 +55,7 @@ http localhost:8080
 
 If you have any problem on running the pod, you can find the reason by hitting this:
 ```
-kubectl logs -l app=front
+kubectl logs -l app=house
 ```
 
 Following problems may be occurred:
