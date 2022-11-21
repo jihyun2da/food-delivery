@@ -71,7 +71,6 @@
                 'foodId': '',
                 'orderId': 0,
                 'status': '',
-                'test': '',
             }
         },
         methods:{
