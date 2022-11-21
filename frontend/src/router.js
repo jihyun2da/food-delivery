@@ -7,21 +7,24 @@ Vue.use(Router);
 
 import OrderManager from "./components/listers/OrderCards"
 import OrderDetail from "./components/listers/OrderDetail"
+import PaymentManager from "./components/listers/PaymentCards"
+import PaymentDetail from "./components/listers/PaymentDetail"
 
 import StoreOrderManager from "./components/listers/StoreOrderCards"
 import StoreOrderDetail from "./components/listers/StoreOrderDetail"
 
+import OrderListView from "./components/OrderListView"
+import OrderListViewDetail from "./components/OrderListViewDetail"
 import DeliveryManager from "./components/listers/DeliveryCards"
 import DeliveryDetail from "./components/listers/DeliveryDetail"
 
+import DeliveryCountView from "./components/DeliveryCountView"
+import DeliveryCountViewDetail from "./components/DeliveryCountViewDetail"
 import NotificationLogManager from "./components/listers/NotificationLogCards"
 import NotificationLogDetail from "./components/listers/NotificationLogDetail"
 
 import OrderStatusView from "./components/OrderStatusView"
 import OrderStatusViewDetail from "./components/OrderStatusViewDetail"
-import PaymentManager from "./components/listers/PaymentCards"
-import PaymentDetail from "./components/listers/PaymentDetail"
-
 
 export default new Router({
     // mode: 'history',
@@ -37,6 +40,16 @@ export default new Router({
                 name: 'OrderDetail',
                 component: OrderDetail
             },
+            {
+                path: '/payments',
+                name: 'PaymentManager',
+                component: PaymentManager
+            },
+            {
+                path: '/payments/:id',
+                name: 'PaymentDetail',
+                component: PaymentDetail
+            },
 
             {
                 path: '/storeOrders',
@@ -50,6 +63,16 @@ export default new Router({
             },
 
             {
+                path: '/orderLists',
+                name: 'OrderListView',
+                component: OrderListView
+            },
+            {
+                path: '/orderLists/:id',
+                name: 'OrderListViewDetail',
+                component: OrderListViewDetail
+            },
+            {
                 path: '/deliveries',
                 name: 'DeliveryManager',
                 component: DeliveryManager
@@ -60,6 +83,16 @@ export default new Router({
                 component: DeliveryDetail
             },
 
+            {
+                path: '/deliveryCounts',
+                name: 'DeliveryCountView',
+                component: DeliveryCountView
+            },
+            {
+                path: '/deliveryCounts/:id',
+                name: 'DeliveryCountViewDetail',
+                component: DeliveryCountViewDetail
+            },
             {
                 path: '/notificationLogs',
                 name: 'NotificationLogManager',
@@ -81,17 +114,6 @@ export default new Router({
                 name: 'OrderStatusViewDetail',
                 component: OrderStatusViewDetail
             },
-            {
-                path: '/payments',
-                name: 'PaymentManager',
-                component: PaymentManager
-            },
-            {
-                path: '/payments/:id',
-                name: 'PaymentDetail',
-                component: PaymentDetail
-            },
-
 
 
     ]

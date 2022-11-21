@@ -70,6 +70,7 @@
             me.newValue = {
                 'address': '',
                 'orderId': 0,
+                'riderId': '',
             }
         },
         methods:{

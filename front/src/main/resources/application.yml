@@ -41,7 +41,7 @@ logging:
 
 api:
   url:
-    pay: pay:8085
+    front: front:8081
 
 
 server:
@@ -75,6 +75,6 @@ spring:
 
 api:
   url:
-    pay: pay:8080
+    front: front:8080
 
 

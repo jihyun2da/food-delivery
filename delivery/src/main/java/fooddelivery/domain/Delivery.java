@@ -35,6 +35,12 @@ public class Delivery  {
     
     
     private Long orderId;
+    
+    
+    
+    
+    
+    private String riderId;
 
     @PostPersist
     public void onPostPersist(){

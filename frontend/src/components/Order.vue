@@ -19,9 +19,8 @@
         <v-card-text>
             <String label="FoodId" v-model="value.foodId" :editMode="editMode"/>
             <String label="CustomerId" v-model="value.customerId" :editMode="editMode"/>
-            <String label="Preference" v-model="value.preference" :editMode="editMode"/>
             <String label="Options" v-model="value.options" :editMode="editMode"/>
-            <Address offline label="Address" v-model="value.address" :editMode="editMode" @change="change"/>
+            <String label="Address" v-model="value.address" :editMode="editMode"/>
             <String label="Status" v-model="value.status" :editMode="editMode"/>
         </v-card-text>
 
@@ -82,12 +81,10 @@
 <script>
     const axios = require('axios').default;
 
-    import Address from './vo/Address.vue';
 
     export default {
         name: 'Order',
         components:{
-            Address,
         },
         props: {
             value: [Object, String, Number, Boolean, Array],
