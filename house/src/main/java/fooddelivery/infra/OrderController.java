@@ -22,5 +22,23 @@ public class OrderController {
 
 
 
+    @RequestMapping(value = "orders/{id}/deliveryconfirm",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8")
+    public Order deliveryconfirm(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+            System.out.println("##### /order/deliveryconfirm  called #####");
+            Optional<Order> optionalOrder = orderRepository.findById(id);
+            
+            optionalOrder.orElseThrow(()-> new Exception("No Entity Found"));
+            Order order = optionalOrder.get();
+            order.deliveryconfirm();
+            
+            orderRepository.save(order);
+            return order;
+            
+    }
+    
+
+
 
 }

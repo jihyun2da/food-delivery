@@ -55,6 +55,9 @@ public class Delivery  {
         deliveryStarted.publishAfterCommit();
 
     }
+    @PrePersist
+    public void onPrePersist(){
+    }
 
     public static DeliveryRepository repository(){
         DeliveryRepository deliveryRepository = DeliveryApplication.applicationContext.getBean(DeliveryRepository.class);
@@ -63,6 +66,8 @@ public class Delivery  {
 
 
 
+    public void accept(){
+    }
 
     public static void addDeliveryList(Cooked cooked){
 
