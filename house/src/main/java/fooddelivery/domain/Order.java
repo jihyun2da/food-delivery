@@ -79,6 +79,11 @@ public class Order  {
     }
     @PrePersist
     public void onPrePersist(){
+        // Get request from Payment
+        //fooddelivery.external.Payment payment =
+        //    Application.applicationContext.getBean(fooddelivery.external.PaymentService.class)
+        //    .getPayment(/** mapping value needed */);
+
     }
     @PreRemove
     public void onPreRemove(){
