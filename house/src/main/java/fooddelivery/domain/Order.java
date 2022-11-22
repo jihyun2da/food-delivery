@@ -93,6 +93,8 @@ public class Order  {
 
 
 
+    public void deliveryConfirm(){
+    }
 
     public static void cancel(Rejected rejected){
 
