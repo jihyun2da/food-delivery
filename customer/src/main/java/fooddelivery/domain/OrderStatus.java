@@ -13,7 +13,7 @@ public class OrderStatus {
         @Id
         //@GeneratedValue(strategy=GenerationType.AUTO)
         private Long id;
-        private String foodId;
+        private Long orderId;
         private String status;
 
 

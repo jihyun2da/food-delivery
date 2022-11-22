@@ -67,7 +67,7 @@
             headers: 
                 [
                     { text: "id", value: "id" },
-                    { text: "customerId", value: "customerId" },
+                    { text: "orderId", value: "orderId" },
                     { text: "message", value: "message" },
                 ],
             notificationLog : [],
@@ -86,7 +86,7 @@
             this.values = temp.data._embedded.notificationlogs;
 
             this.newValue = {
-                'customerId': '',
+                'orderId': 0,
                 'message': '',
             }
         },

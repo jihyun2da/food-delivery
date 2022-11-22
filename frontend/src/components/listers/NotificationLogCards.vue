@@ -68,7 +68,7 @@
             me.values = temp.data._embedded.notificationLogs;
             
             me.newValue = {
-                'customerId': '',
+                'orderId': 0,
                 'message': '',
             }
         },

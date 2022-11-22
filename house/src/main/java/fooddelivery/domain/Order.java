@@ -1,6 +1,7 @@
 package fooddelivery.domain;
 
 import fooddelivery.domain.OrderPlaced;
+import fooddelivery.domain.Delivered;
 import fooddelivery.domain.OrderCanceled;
 import fooddelivery.HouseApplication;
 import javax.persistence.*;
@@ -69,6 +70,11 @@ public class Order  {
 
         OrderPlaced orderPlaced = new OrderPlaced(this);
         orderPlaced.publishAfterCommit();
+
+
+
+        Delivered delivered = new Delivered(this);
+        delivered.publishAfterCommit();
 
     }
     @PostRemove
