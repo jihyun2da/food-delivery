@@ -46,9 +46,6 @@ public class Payment  {
         paid.publishAfterCommit();
 
     }
-    @PrePersist
-    public void onPrePersist(){
-    }
 
     @PrePersist
     public void onPrePersist(){
@@ -84,6 +81,12 @@ public class Payment  {
          });
         */
 
+        repository().findById(rejected.getOrderId()).ifPresent(payment->{
+            
+            repository().delete(payment);
+
+         });
+
         
     }
     public static void cancelPayment(OrderCanceled orderCanceled){
@@ -104,6 +107,12 @@ public class Payment  {
 
          });
         */
+
+        repository().findById(orderCanceled.getId()).ifPresent(payment->{
+            
+            repository().delete(payment);
+
+         });
 
         
     }

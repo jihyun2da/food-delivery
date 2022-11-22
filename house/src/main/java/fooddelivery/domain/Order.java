@@ -80,7 +80,6 @@ public class Order  {
     @PostRemove
     public void onPostRemove(){
 
-
         OrderCanceled orderCanceled = new OrderCanceled(this);
         orderCanceled.publishAfterCommit();
 
@@ -122,6 +121,14 @@ public class Order  {
          });
         */
 
+        repository().findById(rejected.getOrderId()).ifPresent(order->{
+            
+            order.setStatus("취소"); // do something
+            repository().save(order);
+
+
+         });
+
         
     }
     public static void updateStatus(Accepted accepted){
@@ -143,6 +150,14 @@ public class Order  {
          });
         */
 
+        repository().findById(accepted.getOrderId()).ifPresent(order->{
+            
+            order.setStatus("주문접수"); // do something
+            repository().save(order);
+
+
+         });
+
         
     }
     public static void updateStatus(Rejected rejected){
@@ -163,6 +178,13 @@ public class Order  {
 
          });
         */
+
+        repository().findById(rejected.getOrderId()).ifPresent(order->{
+            
+            order.setStatus("접수취소"); // do something
+            repository().save(order);
+
+         });
 
         
     }

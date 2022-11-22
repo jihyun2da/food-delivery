@@ -117,6 +117,12 @@ public class StoreOrder  {
          });
         */
 
+        repository().findByOrderId(orderCanceled.getId()).ifPresent(storeOrder->{
+            
+            storeOrder.setStatus("주문취소"); // do something
+            repository().save(storeOrder);
+
+         });
         
     }
 

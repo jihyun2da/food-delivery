@@ -52,7 +52,8 @@ public class NotificationLog  {
         */
 
         NotificationLog notificationLog = new NotificationLog();
-        notificationLog.setCustomerId(accepted.get);
+        notificationLog.setOrderId(accepted.getOrderId());
+        notificationLog.setMessage("접수됨");
         repository().save(notificationLog);
 
         /** Example 2:  finding and process
@@ -76,6 +77,11 @@ public class NotificationLog  {
 
         */
 
+        NotificationLog notificationLog = new NotificationLog();
+        notificationLog.setOrderId(rejected.getOrderId());
+        notificationLog.setMessage("취소됨");
+        repository().save(notificationLog);
+
         /** Example 2:  finding and process
         
         repository().findById(rejected.get???()).ifPresent(notificationLog->{
@@ -96,6 +102,11 @@ public class NotificationLog  {
         repository().save(notificationLog);
 
         */
+
+        NotificationLog notificationLog = new NotificationLog();
+        notificationLog.setOrderId(cooked.getOrderId());
+        notificationLog.setMessage("조리중");
+        repository().save(notificationLog);
 
         /** Example 2:  finding and process
         
@@ -118,6 +129,11 @@ public class NotificationLog  {
 
         */
 
+        NotificationLog notificationLog = new NotificationLog();
+        notificationLog.setOrderId(paid.getOrderId());
+        notificationLog.setMessage("결제완료");
+        repository().save(notificationLog);
+
         /** Example 2:  finding and process
         
         repository().findById(paid.get???()).ifPresent(notificationLog->{
@@ -138,6 +154,11 @@ public class NotificationLog  {
         repository().save(notificationLog);
 
         */
+
+        NotificationLog notificationLog = new NotificationLog();
+        notificationLog.setOrderId(orderPlaced.getId());
+        notificationLog.setMessage("주문완료");
+        repository().save(notificationLog);
 
         /** Example 2:  finding and process
         
@@ -160,6 +181,11 @@ public class NotificationLog  {
 
         */
 
+        NotificationLog notificationLog = new NotificationLog();
+        notificationLog.setOrderId(deliveryStarted.getOrderId());
+        notificationLog.setMessage("배달시작");
+        repository().save(notificationLog);
+
         /** Example 2:  finding and process
         
         repository().findById(deliveryStarted.get???()).ifPresent(notificationLog->{
@@ -180,6 +206,11 @@ public class NotificationLog  {
         repository().save(notificationLog);
 
         */
+
+        NotificationLog notificationLog = new NotificationLog();
+        notificationLog.setOrderId(delivered.getId());
+        notificationLog.setMessage("배달완료");
+        repository().save(notificationLog);
 
         /** Example 2:  finding and process
         
