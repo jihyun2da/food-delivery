@@ -105,7 +105,11 @@ public class NotificationLog  {
 
         NotificationLog notificationLog = new NotificationLog();
         notificationLog.setOrderId(cooked.getOrderId());
-        notificationLog.setMessage("조리중");
+        if (cooked.getStatus().equals("start-cook")) {
+            notificationLog.setMessage("조리시작");
+        } else {
+            notificationLog.setMessage("조리완료");
+        }
         repository().save(notificationLog);
 
         /** Example 2:  finding and process
@@ -189,27 +193,6 @@ public class NotificationLog  {
         /** Example 2:  finding and process
         
         repository().findById(deliveryStarted.get???()).ifPresent(notificationLog->{
-            
-            notificationLog // do something
-            repository().save(notificationLog);
-
-
-         });
-        */
-
-        
-    }
-    public static void noticeKakao(Delivered delivered){
-
-        /** Example 1:  new item 
-        NotificationLog notificationLog = new NotificationLog();
-        repository().save(notificationLog);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(delivered.get???()).ifPresent(notificationLog->{
             
             notificationLog // do something
             repository().save(notificationLog);
