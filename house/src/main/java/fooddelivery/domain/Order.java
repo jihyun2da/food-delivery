@@ -1,7 +1,6 @@
 package fooddelivery.domain;
 
 import fooddelivery.domain.OrderPlaced;
-import fooddelivery.domain.Delivered;
 import fooddelivery.domain.OrderCanceled;
 import fooddelivery.HouseApplication;
 import javax.persistence.*;
@@ -70,11 +69,6 @@ public class Order  {
 
         OrderPlaced orderPlaced = new OrderPlaced(this);
         orderPlaced.publishAfterCommit();
-
-
-
-        Delivered delivered = new Delivered(this);
-        delivered.publishAfterCommit();
 
     }
     @PostRemove
@@ -187,6 +181,26 @@ public class Order  {
          });
 
         
+    }
+    public static void updateStatus(Cooked cooked){
+
+        /** Example 1:  new item 
+        Order order = new Order();
+        repository().save(order);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(cooked.get???()).ifPresent(order->{
+            
+            order // do something
+            repository().save(order);
+
+
+         });
+        */
+
     }
 
 

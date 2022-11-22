@@ -9,6 +9,6 @@ public class Rejected extends AbstractEvent {
 
     private Long id;
     private String foodId;
-    private Long orderId;
+    private String orderId;
     private String status;
 }
