@@ -73,7 +73,6 @@ public class Order  {
     @PostUpdate
     public void onPostUpdate(){
 
-
         if (status.equals("finish")) {
 
             Delivered delivered = new Delivered(this);
