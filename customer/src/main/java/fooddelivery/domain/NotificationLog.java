@@ -199,7 +199,7 @@ public class NotificationLog  {
 
         
     }
-<<<<<<< HEAD
+
     public static void noticeKakao(Delivered delivered){
 
         /** Example 1:  new item 
@@ -226,8 +226,5 @@ public class NotificationLog  {
 
         
     }
-=======
->>>>>>> origin/template
-
 
 }

@@ -81,7 +81,7 @@ public class Delivery  {
         
         Order order = DeliveryApplication.applicationContext.getBean(fooddelivery.external.OrderService.class)
             .getOrder(cooked.getOrderId());
-
+            System.out.println("\n\n##### 배달추가 " + order + "\n\n");
         Delivery delivery = new Delivery();
         delivery.setOrderId(cooked.getOrderId());
         delivery.setRiderId(String.valueOf(cooked.getOrderId()));

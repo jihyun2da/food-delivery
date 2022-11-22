@@ -62,6 +62,8 @@ public class Order  {
 
 
         fooddelivery.external.Payment payment = new fooddelivery.external.Payment();
+        payment.setOrderId(id);
+        payment.setFoodId(foodId);
         // mappings goes here
         HouseApplication.applicationContext.getBean(fooddelivery.external.PaymentService.class)
             .pay(payment);
@@ -73,6 +75,12 @@ public class Order  {
     }
     @PostRemove
     public void onPostRemove(){
+    }
+    @PrePersist
+    public void onPrePersist(){
+    }
+    @PreRemove
+    public void onPreRemove(){
 
         if (this.getStatus().equals("cooking")) {
             System.out.println("\n\n##### 조리 시작으로 취소 불가능 \n\n");
@@ -81,12 +89,6 @@ public class Order  {
         OrderCanceled orderCanceled = new OrderCanceled(this);
         orderCanceled.publishAfterCommit();
 
-    }
-    @PrePersist
-    public void onPrePersist(){
-    }
-    @PreRemove
-    public void onPreRemove(){
     }
 
     public static OrderRepository repository(){

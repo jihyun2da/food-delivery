@@ -56,7 +56,6 @@ public class StoreOrder  {
 
     public void finishCook(){
         Cooked cooked = new Cooked(this);
-        cooked.setStatus("finish");
         cooked.publishAfterCommit();
     }
     public void accept(){
@@ -79,11 +78,7 @@ public class StoreOrder  {
         repository().save(storeOrder);
 
         */
-        StoreOrder storeOrder = new StoreOrder();
-        storeOrder.setOrderId(paid.getOrderId());
-        storeOrder.setFoodId(paid.getFoodId());
-        storeOrder.setStatus("accept");
-        repository().save(storeOrder);
+       
 
         /** Example 2:  finding and process
         
@@ -95,7 +90,22 @@ public class StoreOrder  {
 
          });
         */
+        repository().findByOrderId(paid.getOrderId()).ifPresentOrElse(
+            storeOrder->{
+            
+            storeOrder.setStatus("paid"); // do something
+            repository().save(storeOrder);
 
+
+         },
+         () ->{
+            StoreOrder storeOrder = new StoreOrder();
+            storeOrder.setOrderId(paid.getOrderId());
+            storeOrder.setFoodId(paid.getFoodId());
+            storeOrder.setStatus("paid");
+            repository().save(storeOrder);
+         }
+         );
         
     }
     public static void noticeCancleOrder(OrderCanceled orderCanceled){
