@@ -74,6 +74,10 @@ public class Order  {
     @PostRemove
     public void onPostRemove(){
 
+        if (this.getStatus().equals("cooking")) {
+            System.out.println("\n\n##### 조리 시작으로 취소 불가능 \n\n");
+            return;
+        }
         OrderCanceled orderCanceled = new OrderCanceled(this);
         orderCanceled.publishAfterCommit();
 
@@ -200,6 +204,14 @@ public class Order  {
 
          });
         */
+
+        repository().findById(cooked.getOrderId()).ifPresent(order->{
+            
+            order.setStatus("cooking"); // do something
+            repository().save(order);
+
+
+         });
 
     }
 
