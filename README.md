@@ -36,8 +36,8 @@ https://labs.msaez.io/#/storming/H6tLbk0ptNX2TgnchFK15fnL8xl1/cbb21a2c294f521982
 
 
 2. CQRS
-- readModel 부분으로 CQRS 확인
-
+- readModel 에서 지속적으로 상태 업데이트
+- 
 ![image](https://user-images.githubusercontent.com/117624181/203249105-4397f6a1-859c-4342-87d7-3778897cbb2f.png)
 ![image](https://user-images.githubusercontent.com/117624181/203249058-b58fab7c-df93-4a86-aba5-fd685e86d1b5.png)
 
@@ -48,6 +48,7 @@ https://labs.msaez.io/#/storming/H6tLbk0ptNX2TgnchFK15fnL8xl1/cbb21a2c294f521982
 
 4. Request / Response
 - 동기적으로 결제가 진행되도록 구현
+
 ![image](https://user-images.githubusercontent.com/117624181/203249339-5c6b4406-5fd7-4885-989e-b9fd270d56b3.png)
 
 5. Circuit Breaker
@@ -60,6 +61,7 @@ https://labs.msaez.io/#/storming/H6tLbk0ptNX2TgnchFK15fnL8xl1/cbb21a2c294f521982
 
 
 6. Gateway 
+- Gateway에서 통합 관리
 
 ![image](https://user-images.githubusercontent.com/117624181/203249487-c73153bd-3ac6-4f16-a206-f95e316f688b.png)
 
