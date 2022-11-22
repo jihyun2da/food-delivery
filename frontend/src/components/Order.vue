@@ -65,9 +65,9 @@
                     v-if="!editMode"
                     color="deep-purple lighten-2"
                     text
-                    @click="deliveryConfirm"
+                    @click="deliveryconfirm"
             >
-                DeliveryConfirm
+                Deliveryconfirm
             </v-btn>
         </v-card-actions>
 
@@ -199,6 +199,25 @@
             },
             change(){
                 this.$emit('input', this.value);
+            },
+            async deliveryconfirm() {
+                try {
+                    if(!this.offline) {
+                        var temp = await axios.put(axios.fixUrl(this.value._links['deliveryconfirm'].href))
+                        for(var k in temp.data) {
+                            this.value[k]=temp.data[k];
+                        }
+                    }
+
+                    this.editMode = false;
+                } catch(e) {
+                    this.snackbar.status = true
+                    if(e.response && e.response.data.message) {
+                        this.snackbar.text = e.response.data.message
+                    } else {
+                        this.snackbar.text = e
+                    }
+                }
             },
         },
     }
