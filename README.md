@@ -37,14 +37,15 @@ https://labs.msaez.io/#/storming/H6tLbk0ptNX2TgnchFK15fnL8xl1/cbb21a2c294f521982
 
 2. CQRS
 - readModel 에서 지속적으로 상태 업데이트
-- 
+
 ![image](https://user-images.githubusercontent.com/117624181/203249105-4397f6a1-859c-4342-87d7-3778897cbb2f.png)
 ![image](https://user-images.githubusercontent.com/117624181/203249058-b58fab7c-df93-4a86-aba5-fd685e86d1b5.png)
 
 3. Compensation / Correlation
 - 주문 상태에 따라 취소/취소 불가 구현
 
-![image](https://user-images.githubusercontent.com/117624181/203249255-bbe7c48a-b5b2-47c1-815c-4bbfdfe7d1d7.png)
+![image](https://user-images.githubusercontent.com/117624181/203258212-9c6b9d41-59cc-4994-b0c7-cb31678439d0.png)
+
 
 4. Request / Response
 - 동기적으로 결제가 진행되도록 구현
