@@ -8,11 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Date;
 
-@FeignClient(name = "house", url = "${api.url.house}", fallback = PaymentServiceImpl.class)
+@FeignClient(name = "house", url = "${api.url.house}")
 public interface PaymentService {
+<<<<<<< HEAD
     @RequestMapping(method= RequestMethod.GET, path="/payments/{id}")
     public Payment getPayment(@PathVariable("id") Long id);
     @RequestMapping(method= RequestMethod.GET, path="/payments")
+=======
+    @RequestMapping(method= RequestMethod.POST, path="/payments")
+>>>>>>> origin/template
     public void pay(@RequestBody Payment payment);
 }
 
