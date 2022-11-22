@@ -1,6 +1,5 @@
 package fooddelivery.domain;
 
-import fooddelivery.domain.Delivered;
 import fooddelivery.domain.DeliveryStarted;
 import fooddelivery.DeliveryApplication;
 import javax.persistence.*;
@@ -44,11 +43,6 @@ public class Delivery  {
 
     @PostPersist
     public void onPostPersist(){
-
-
-        Delivered delivered = new Delivered(this);
-        delivered.publishAfterCommit();
-
 
 
         DeliveryStarted deliveryStarted = new DeliveryStarted(this);

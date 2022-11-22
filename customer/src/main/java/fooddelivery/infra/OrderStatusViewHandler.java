@@ -27,9 +27,8 @@ public class OrderStatusViewHandler {
             // view 객체 생성
             OrderStatus orderStatus = new OrderStatus();
             // view 객체에 이벤트의 Value 를 set 함
-            orderStatus.setId(orderPlaced.getId());
-            orderStatus.setFoodId(orderPlaced.getFoodId());
             orderStatus.setStatus("주문됨");
+            orderStatus.setOrderId(orderPlaced.getId());
             // view 레파지 토리에 save
             orderStatusRepository.save(orderStatus);
 
@@ -100,11 +99,11 @@ public class OrderStatusViewHandler {
         }
     }
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenDelivered_then_UPDATE_4(@Payload Delivered delivered) {
+    public void when_then_UPDATE_(@Payload  ) {
         try {
-            if (!delivered.validate()) return;
+            if (!.validate()) return;
                 // view 객체 조회
-            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(Long.valueOf(delivered.getOrderId()));
+            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(Long.valueOf(.getOrderId()));
 
             if( orderStatusOptional.isPresent()) {
                  OrderStatus orderStatus = orderStatusOptional.get();
@@ -114,6 +113,78 @@ public class OrderStatusViewHandler {
                  orderStatusRepository.save(orderStatus);
                 }
 
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenOrderCanceled_then_UPDATE_5(@Payload OrderCanceled orderCanceled) {
+        try {
+            if (!orderCanceled.validate()) return;
+                // view 객체 조회
+
+                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(orderCanceled.getId());
+                for(OrderStatus orderStatus : orderStatusList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    orderStatus.setStatus("주문취소");
+                // view 레파지 토리에 save
+                orderStatusRepository.save(orderStatus);
+                }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenRejected_then_UPDATE_6(@Payload Rejected rejected) {
+        try {
+            if (!rejected.validate()) return;
+                // view 객체 조회
+
+                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(Long.valueOf(rejected.getOrderId()));
+                for(OrderStatus orderStatus : orderStatusList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    orderStatus.setStatus("가게취소");
+                // view 레파지 토리에 save
+                orderStatusRepository.save(orderStatus);
+                }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenCooked_then_UPDATE_7(@Payload Cooked cooked) {
+        try {
+            if (!cooked.validate()) return;
+                // view 객체 조회
+
+                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(cooked.getId());
+                for(OrderStatus orderStatus : orderStatusList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    orderStatus.setStatus("조리중");
+                // view 레파지 토리에 save
+                orderStatusRepository.save(orderStatus);
+                }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenDelivered_then_UPDATE_8(@Payload Delivered delivered) {
+        try {
+            if (!delivered.validate()) return;
+                // view 객체 조회
+
+                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(delivered.getId());
+                for(OrderStatus orderStatus : orderStatusList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    orderStatus.setStatus("배달완료");
+                // view 레파지 토리에 save
+                orderStatusRepository.save(orderStatus);
+                }
 
         }catch (Exception e){
             e.printStackTrace();

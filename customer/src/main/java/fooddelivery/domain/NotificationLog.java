@@ -26,7 +26,7 @@ public class NotificationLog  {
     
     
     
-    private String customerId;
+    private Long orderId;
     
     
     

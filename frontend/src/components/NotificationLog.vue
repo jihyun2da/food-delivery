@@ -17,7 +17,7 @@
         </v-card-title >
 
         <v-card-text>
-            <String label="CustomerId" v-model="value.customerId" :editMode="editMode"/>
+            <Number label="OrderId" v-model="value.orderId" :editMode="editMode"/>
             <String label="Message" v-model="value.message" :editMode="editMode"/>
         </v-card-text>
 

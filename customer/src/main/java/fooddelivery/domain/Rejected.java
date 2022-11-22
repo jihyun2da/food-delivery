@@ -1,11 +1,10 @@
 package fooddelivery.domain;
 
-import fooddelivery.domain.*;
 import fooddelivery.infra.AbstractEvent;
-import lombok.*;
+import lombok.Data;
 import java.util.*;
+
 @Data
-@ToString
 public class Rejected extends AbstractEvent {
 
     private Long id;
@@ -13,5 +12,3 @@ public class Rejected extends AbstractEvent {
     private String orderId;
     private String status;
 }
-
-
