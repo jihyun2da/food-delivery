@@ -43,16 +43,14 @@ public class OrderStatusViewHandler {
         try {
             if (!paid.validate()) return;
                 // view 객체 조회
-            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(paid.getOrderId());
 
-            if( orderStatusOptional.isPresent()) {
-                 OrderStatus orderStatus = orderStatusOptional.get();
-            // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderStatus.setStatus("결재됨");    
+                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(paid.getOrderId());
+                for(OrderStatus orderStatus : orderStatusList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    orderStatus.setStatus("결재됨");
                 // view 레파지 토리에 save
-                 orderStatusRepository.save(orderStatus);
+                orderStatusRepository.save(orderStatus);
                 }
-
 
         }catch (Exception e){
             e.printStackTrace();
@@ -63,16 +61,14 @@ public class OrderStatusViewHandler {
         try {
             if (!accepted.validate()) return;
                 // view 객체 조회
-            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(accepted.getOrderId());
 
-            if( orderStatusOptional.isPresent()) {
-                 OrderStatus orderStatus = orderStatusOptional.get();
-            // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderStatus.setStatus("접수됨");    
+                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(accepted.getOrderId());
+                for(OrderStatus orderStatus : orderStatusList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    orderStatus.setStatus("접수됨");
                 // view 레파지 토리에 save
-                 orderStatusRepository.save(orderStatus);
+                orderStatusRepository.save(orderStatus);
                 }
-
 
         }catch (Exception e){
             e.printStackTrace();
@@ -83,16 +79,14 @@ public class OrderStatusViewHandler {
         try {
             if (!deliveryStarted.validate()) return;
                 // view 객체 조회
-            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(deliveryStarted.getOrderId());
 
-            if( orderStatusOptional.isPresent()) {
-                 OrderStatus orderStatus = orderStatusOptional.get();
-            // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderStatus.setStatus("배달시작됨");    
+                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(deliveryStarted.getOrderId());
+                for(OrderStatus orderStatus : orderStatusList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    orderStatus.setStatus("배달시작됨");
                 // view 레파지 토리에 save
-                 orderStatusRepository.save(orderStatus);
+                orderStatusRepository.save(orderStatus);
                 }
-
 
         }catch (Exception e){
             e.printStackTrace();
@@ -103,16 +97,13 @@ public class OrderStatusViewHandler {
         try {
             if (!delivered.validate()) return;
                 // view 객체 조회
-            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(Long.valueOf(delivered.getId()));
-
-            if( orderStatusOptional.isPresent()) {
-                 OrderStatus orderStatus = orderStatusOptional.get();
-            // view 객체에 이벤트의 eventDirectValue 를 set 함
-                orderStatus.setStatus("배달완료");    
+                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(Long.valueOf(delivered.getId()));
+                for(OrderStatus orderStatus : orderStatusList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    orderStatus.setStatus("배달완료");
                 // view 레파지 토리에 save
-                 orderStatusRepository.save(orderStatus);
+                orderStatusRepository.save(orderStatus);
                 }
-
 
         }catch (Exception e){
             e.printStackTrace();
