@@ -89,7 +89,7 @@ public class Order  {
     @PreRemove
     public void onPreRemove(){
 
-        if (this.getStatus().equals("cooking")) {
+        if (status.equals("cooking")) {
             System.out.println("\n\n##### 조리 시작으로 취소 불가능 \n\n");
             return;
         }
