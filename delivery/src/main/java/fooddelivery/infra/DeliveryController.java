@@ -20,5 +20,23 @@ public class DeliveryController {
 
 
 
+    @RequestMapping(value = "deliveries/{id}/accept",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8")
+    public Delivery accept(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+            System.out.println("##### /delivery/accept  called #####");
+            Optional<Delivery> optionalDelivery = deliveryRepository.findById(id);
+            
+            optionalDelivery.orElseThrow(()-> new Exception("No Entity Found"));
+            Delivery delivery = optionalDelivery.get();
+            delivery.accept();
+            
+            deliveryRepository.save(delivery);
+            return delivery;
+            
+    }
+    
+
+
 
 }
