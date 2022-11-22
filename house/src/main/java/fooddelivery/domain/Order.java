@@ -71,6 +71,9 @@ public class Order  {
         OrderPlaced orderPlaced = new OrderPlaced(this);
         orderPlaced.publishAfterCommit();
 
+    }
+    @PostUpdate
+    public void onPostUpdate(){
 
 
         Delivered delivered = new Delivered(this);
