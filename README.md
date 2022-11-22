@@ -29,27 +29,30 @@ https://labs.msaez.io/#/storming/H6tLbk0ptNX2TgnchFK15fnL8xl1/cbb21a2c294f521982
 # 체크포인트
 
 1. Saga (Pub / Sub)
+- kafka를 통해 publish / subscribe 으로 비동기 통신 구현
 
 ![image](https://user-images.githubusercontent.com/117624181/203247498-03b6cae2-5b0d-43a3-b77a-c6a559507cb1.png)
 ![image](https://user-images.githubusercontent.com/117624181/203247565-866eb166-751e-41e5-aef2-8012471907e4.png)
 
 
 2. CQRS
+- readModel 부분으로 CQRS 확인
 
 ![image](https://user-images.githubusercontent.com/117624181/203249105-4397f6a1-859c-4342-87d7-3778897cbb2f.png)
 ![image](https://user-images.githubusercontent.com/117624181/203249058-b58fab7c-df93-4a86-aba5-fd685e86d1b5.png)
 
 3. Compensation / Correlation
+- 주문 상태에 따라 취소/취소 불가 구현
 
 ![image](https://user-images.githubusercontent.com/117624181/203249255-bbe7c48a-b5b2-47c1-815c-4bbfdfe7d1d7.png)
 
 4. Request / Response
-
+- 동기적으로 결재가 진행되도록 구현
 ![image](https://user-images.githubusercontent.com/117624181/203249339-5c6b4406-5fd7-4885-989e-b9fd270d56b3.png)
 
 5. Circuit Breaker
-서킷 브레이킹 프레임워크의 선택: Spring FeignClient + Hystrix 옵션을 사용하여 구현함
-시나리오는 주문-->결제 시의 연결을 RESTful Request/Response 로 연동하여 구현이 되어있고, 결제에 많은 시간이 소요될 경우 서킷 브레이커로 장애처리.
+- 서킷 브레이킹 프레임워크의 선택: Spring FeignClient + Hystrix 옵션을 사용하여 구현함
+주문-->결제 시의 연결을 Req/Res 로 연동하여 구현하였고, 결제에 많은 시간이 소요될 경우 서킷 브레이커로 장애처리.
 
 ![image](https://user-images.githubusercontent.com/117624181/203254371-4a9bc2a4-5cd8-4414-9069-3ed1759db1d4.png)
 
