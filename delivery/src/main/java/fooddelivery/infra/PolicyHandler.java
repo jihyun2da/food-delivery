@@ -37,13 +37,10 @@ public class PolicyHandler{
         // orderService.getOrder(/** mapping value needed */);
 
 
-        
+        if (event.getStatus().equals("finish")) {
+            Delivery.addDeliveryList(event);
+        }
 
-        // Sample Logic //
-        Delivery.addDeliveryList(event);
-        
-
-        
 
     }
 
