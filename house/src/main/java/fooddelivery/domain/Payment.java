@@ -40,6 +40,9 @@ public class Payment  {
         paid.publishAfterCommit();
 
     }
+    @PrePersist
+    public void onPrePersist(){
+    }
 
     @PrePersist
     public void onPrePersist(){
