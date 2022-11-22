@@ -23,6 +23,13 @@
 1. 주문상태가 바뀔 때 마다 카톡으로 알림을 보낸다
 1. 고객이 요리를 배달 받으면 배송확인 버튼을 탭하여, 모든 거래가 완료된다
 
+# 추가구현 사항
+- store / delivery 에 각각 ReadModel 추가
+- store : 주문 접수 시 foodId 별 Count를 증가하여 주문량 확인 가능
+- delivery : riderId 별 배달 접수 시 Count를 증가하여 rider별 배달 횟수 확인 가능
+- 
+![image](https://user-images.githubusercontent.com/117624181/203259582-715ebc3e-0bf3-4c3d-ad9b-29bb24eb3670.png)
+
 https://labs.msaez.io/#/storming/H6tLbk0ptNX2TgnchFK15fnL8xl1/cbb21a2c294f5219828d43c9f93e5e35
 ![image](https://user-images.githubusercontent.com/117624181/203246967-dccd2e13-74f4-412c-98fe-5aace4166634.png)
 
