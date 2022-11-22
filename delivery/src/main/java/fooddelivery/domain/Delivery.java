@@ -78,7 +78,6 @@ public class Delivery  {
             System.out.println("\n\n##### 배달추가 " + order + "\n\n");
         Delivery delivery = new Delivery();
         delivery.setOrderId(cooked.getOrderId());
-        delivery.setRiderId(String.valueOf(cooked.getOrderId()));
         delivery.setAddress(order.getAddress());
         repository().save(delivery);
 

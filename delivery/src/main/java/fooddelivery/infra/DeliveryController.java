@@ -29,6 +29,7 @@ public class DeliveryController {
             
             optionalDelivery.orElseThrow(()-> new Exception("No Entity Found"));
             Delivery delivery = optionalDelivery.get();
+            delivery.setRiderId(String.valueOf(id));
             delivery.accept();
             
             deliveryRepository.save(delivery);
