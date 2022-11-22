@@ -41,8 +41,8 @@ public class Delivery  {
     
     private String riderId;
 
-    @PostPersist
-    public void onPostPersist(){
+    @PostUpdate
+    public void onPostUpdate(){
 
 
         DeliveryStarted deliveryStarted = new DeliveryStarted(this);
