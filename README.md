@@ -47,7 +47,7 @@ https://labs.msaez.io/#/storming/H6tLbk0ptNX2TgnchFK15fnL8xl1/cbb21a2c294f521982
 ![image](https://user-images.githubusercontent.com/117624181/203249255-bbe7c48a-b5b2-47c1-815c-4bbfdfe7d1d7.png)
 
 4. Request / Response
-- 동기적으로 결재가 진행되도록 구현
+- 동기적으로 결제가 진행되도록 구현
 ![image](https://user-images.githubusercontent.com/117624181/203249339-5c6b4406-5fd7-4885-989e-b9fd270d56b3.png)
 
 5. Circuit Breaker
