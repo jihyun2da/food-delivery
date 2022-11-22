@@ -12,5 +12,7 @@ import java.util.Date;
 public interface PaymentService {
     @RequestMapping(method= RequestMethod.GET, path="/payments/{id}")
     public Payment getPayment(@PathVariable("id") Long id);
+    @RequestMapping(method= RequestMethod.GET, path="/payments")
+    public void pay(@RequestBody Payment payment);
 }
 

@@ -18,7 +18,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public void pay(Payment payment) {
-        // TODO Auto-generated method stub
+        
         
     }
 }

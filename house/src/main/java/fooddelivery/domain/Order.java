@@ -78,8 +78,11 @@ public class Order  {
     public void onPostUpdate(){
 
 
-        Delivered delivered = new Delivered(this);
-        delivered.publishAfterCommit();
+        if (status.equals("finish")) {
+
+            Delivered delivered = new Delivered(this);
+            delivered.publishAfterCommit();
+        }
 
     }
     @PostRemove
