@@ -62,7 +62,6 @@ https://labs.msaez.io/#/storming/H6tLbk0ptNX2TgnchFK15fnL8xl1/cbb21a2c294f521982
 
 
 6. Gateway 
-- Gateway에서 통합 관리
 
 ![image](https://user-images.githubusercontent.com/117624181/203249487-c73153bd-3ac6-4f16-a206-f95e316f688b.png)
 
