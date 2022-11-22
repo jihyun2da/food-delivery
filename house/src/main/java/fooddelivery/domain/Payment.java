@@ -31,6 +31,12 @@ public class Payment  {
     
     
     private Long orderId;
+    
+    
+    
+    
+    
+    private String foodId;
 
     @PostPersist
     public void onPostPersist(){
