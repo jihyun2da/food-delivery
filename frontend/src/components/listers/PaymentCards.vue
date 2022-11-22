@@ -69,6 +69,7 @@
             
             me.newValue = {
                 'orderId': 0,
+                'foodId': '',
             }
         },
         methods:{

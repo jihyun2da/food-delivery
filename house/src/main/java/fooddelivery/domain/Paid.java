@@ -11,6 +11,7 @@ public class Paid extends AbstractEvent {
 
     private Long id;
     private Long orderId;
+    private String foodId;
 
     public Paid(Payment aggregate){
         super(aggregate);

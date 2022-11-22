@@ -36,7 +36,7 @@ mvn spring-boot:run
 - house
 ```
  http :8088/orders id="id" foodId="foodId" customerId="customerId" options="options" address="address" status="status" 
- http :8088/payments id="id" orderId="orderId" 
+ http :8088/payments id="id" orderId="orderId" foodId="foodId" 
 ```
 - store
 ```
