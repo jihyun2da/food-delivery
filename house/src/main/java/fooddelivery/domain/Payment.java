@@ -37,6 +37,9 @@ public class Payment  {
         paid.publishAfterCommit();
 
     }
+    @PrePersist
+    public void onPrePersist(){
+    }
 
     public static PaymentRepository repository(){
         PaymentRepository paymentRepository = HouseApplication.applicationContext.getBean(PaymentRepository.class);
