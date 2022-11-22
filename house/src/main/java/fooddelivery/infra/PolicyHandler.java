@@ -30,9 +30,6 @@ public class PolicyHandler{
         Rejected event = rejected;
         System.out.println("\n\n##### listener CancelPayment : " + rejected + "\n\n");
 
-
-        
-
         // Sample Logic //
         Payment.cancelPayment(event);
         
@@ -45,9 +42,6 @@ public class PolicyHandler{
 
         OrderCanceled event = orderCanceled;
         System.out.println("\n\n##### listener CancelPayment : " + orderCanceled + "\n\n");
-
-
-        
 
         // Sample Logic //
         Payment.cancelPayment(event);
@@ -63,9 +57,6 @@ public class PolicyHandler{
         Rejected event = rejected;
         System.out.println("\n\n##### listener Cancel : " + rejected + "\n\n");
 
-
-        
-
         // Sample Logic //
         Order.cancel(event);
         
@@ -80,9 +71,6 @@ public class PolicyHandler{
         Accepted event = accepted;
         System.out.println("\n\n##### listener UpdateStatus : " + accepted + "\n\n");
 
-
-        
-
         // Sample Logic //
         Order.updateStatus(event);
         
@@ -96,9 +84,6 @@ public class PolicyHandler{
         Rejected event = rejected;
         System.out.println("\n\n##### listener UpdateStatus : " + rejected + "\n\n");
 
-
-        
-
         // Sample Logic //
         Order.updateStatus(event);
         
@@ -111,9 +96,6 @@ public class PolicyHandler{
 
         Cooked event = cooked;
         System.out.println("\n\n##### listener UpdateStatus : " + cooked + "\n\n");
-
-
-        
 
         // Sample Logic //
         Order.updateStatus(event);

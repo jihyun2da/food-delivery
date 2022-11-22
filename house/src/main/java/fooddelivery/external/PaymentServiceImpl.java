@@ -11,7 +11,15 @@ public class PaymentServiceImpl implements PaymentService {
      */
     public Payment getPayment(Long id) {
         Payment payment = new Payment();
+        payment.setOrderId(id);
+        payment.setFoodId("준비중");
         return payment;
+    }
+
+    @Override
+    public void pay(Payment payment) {
+        // TODO Auto-generated method stub
+        
     }
 }
 

@@ -49,9 +49,9 @@ public class Payment  {
 
     @PrePersist
     public void onPrePersist(){
-        Paid paid = new Paid();
-        BeanUtils.copyProperties(this, paid);
-        paid.publish();
+        // Paid paid = new Paid();
+        // BeanUtils.copyProperties(this, paid);
+        // paid.publish();
     }
 
     public static PaymentRepository repository(){

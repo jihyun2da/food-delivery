@@ -44,13 +44,14 @@ public class Delivery  {
     private String riderId;
 
     @PostPersist
-    public void onPostPersist(){
+    public void onPostPersist() {
 
 
         DeliveryStarted deliveryStarted = new DeliveryStarted(this);
         deliveryStarted.publishAfterCommit();
 
     }
+
     @PrePersist
     public void onPrePersist(){
     }

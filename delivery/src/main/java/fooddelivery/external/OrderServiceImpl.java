@@ -11,6 +11,8 @@ public class OrderServiceImpl implements OrderService {
      */
     public Order getOrder(Long id) {
         Order order = new Order();
+        order.setId(id);
+        order.setStatus("결제폭주");
         return order;
     }
 }

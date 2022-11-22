@@ -103,7 +103,7 @@ public class OrderStatusViewHandler {
         try {
             if (!delivered.validate()) return;
                 // view 객체 조회
-            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(Long.valueOf(delivered.getOrderId()));
+            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(Long.valueOf(delivered.getId()));
 
             if( orderStatusOptional.isPresent()) {
                  OrderStatus orderStatus = orderStatusOptional.get();

@@ -84,11 +84,6 @@ public class Order  {
     }
     @PrePersist
     public void onPrePersist(){
-        // Get request from Payment
-        //fooddelivery.external.Payment payment =
-        //    Application.applicationContext.getBean(fooddelivery.external.PaymentService.class)
-        //    .getPayment(/** mapping value needed */);
-
     }
     @PreRemove
     public void onPreRemove(){
@@ -220,7 +215,7 @@ public class Order  {
 
         repository().findById(cooked.getOrderId()).ifPresent(order->{
             
-            order.setStatus("cooking"); // do something
+            order.setStatus("요리중"); // do something
             repository().save(order);
 
 

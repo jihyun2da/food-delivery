@@ -18,10 +18,6 @@ public class OrderController {
     @Autowired
     OrderRepository orderRepository;
 
-
-
-
-
     @RequestMapping(value = "orders/{id}/deliveryconfirm",
         method = RequestMethod.PUT,
         produces = "application/json;charset=UTF-8")
