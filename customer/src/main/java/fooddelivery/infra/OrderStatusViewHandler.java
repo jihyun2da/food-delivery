@@ -99,11 +99,11 @@ public class OrderStatusViewHandler {
         }
     }
     @StreamListener(KafkaProcessor.INPUT)
-    public void when_then_UPDATE_(@Payload  ) {
+    public void whenDelivered_then_UPDATE_4(@Payload Delivered delivered) {
         try {
-            if (!.validate()) return;
+            if (!delivered.validate()) return;
                 // view 객체 조회
-            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(Long.valueOf(.getOrderId()));
+            Optional<OrderStatus> orderStatusOptional = orderStatusRepository.findById(Long.valueOf(delivered.getOrderId()));
 
             if( orderStatusOptional.isPresent()) {
                  OrderStatus orderStatus = orderStatusOptional.get();
@@ -164,24 +164,6 @@ public class OrderStatusViewHandler {
                 for(OrderStatus orderStatus : orderStatusList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
                     orderStatus.setStatus("조리중");
-                // view 레파지 토리에 save
-                orderStatusRepository.save(orderStatus);
-                }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-    @StreamListener(KafkaProcessor.INPUT)
-    public void whenDelivered_then_UPDATE_8(@Payload Delivered delivered) {
-        try {
-            if (!delivered.validate()) return;
-                // view 객체 조회
-
-                List<OrderStatus> orderStatusList = orderStatusRepository.findByOrderId(delivered.getId());
-                for(OrderStatus orderStatus : orderStatusList){
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    orderStatus.setStatus("배달완료");
                 // view 레파지 토리에 save
                 orderStatusRepository.save(orderStatus);
                 }

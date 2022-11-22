@@ -8,9 +8,7 @@ import java.util.*;
 public class Delivered extends AbstractEvent {
 
     private Long id;
-    private String foodId;
-    private String customerId;
-    private String options;
     private String address;
-    private String status;
+    private Long orderId;
+    private String riderId;
 }
