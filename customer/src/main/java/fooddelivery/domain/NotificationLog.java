@@ -51,6 +51,10 @@ public class NotificationLog  {
 
         */
 
+        NotificationLog notificationLog = new NotificationLog();
+        notificationLog.setCustomerId(accepted.get);
+        repository().save(notificationLog);
+
         /** Example 2:  finding and process
         
         repository().findById(accepted.get???()).ifPresent(notificationLog->{

@@ -79,6 +79,11 @@ public class StoreOrder  {
         repository().save(storeOrder);
 
         */
+        StoreOrder storeOrder = new StoreOrder();
+        storeOrder.setOrderId(paid.getOrderId());
+        storeOrder.setFoodId(paid.getFoodId());
+        storeOrder.setStatus("accept");
+        repository().save(storeOrder);
 
         /** Example 2:  finding and process
         

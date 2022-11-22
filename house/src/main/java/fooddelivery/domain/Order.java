@@ -93,7 +93,8 @@ public class Order  {
 
 
 
-    public void deliveryconfirm(){
+    public void deliveryconfirm(Order order){
+        order.setStatus("finish");
     }
 
     public static void cancel(Rejected rejected){

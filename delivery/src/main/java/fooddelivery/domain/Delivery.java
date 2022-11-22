@@ -2,6 +2,8 @@ package fooddelivery.domain;
 
 import fooddelivery.domain.Delivered;
 import fooddelivery.domain.DeliveryStarted;
+import fooddelivery.external.Order;
+import fooddelivery.external.OrderService;
 import fooddelivery.DeliveryApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -76,6 +78,15 @@ public class Delivery  {
         repository().save(delivery);
 
         */
+        
+        Order order = DeliveryApplication.applicationContext.getBean(fooddelivery.external.OrderService.class)
+            .getOrder(cooked.getOrderId());
+
+        Delivery delivery = new Delivery();
+        delivery.setOrderId(cooked.getOrderId());
+        delivery.setRiderId(String.valueOf(cooked.getOrderId()));
+        delivery.setAddress(order.getAddress());
+        repository().save(delivery);
 
         /** Example 2:  finding and process
         
@@ -87,13 +98,6 @@ public class Delivery  {
 
          });
         */
-        repository().findById(cooked.getId()).ifPresent(delivery->{
-            
-            delivery.setRiderId(String.valueOf(delivery.getOrderId())); // do something
-            repository().save(delivery);
-
-
-         });
 
         
     }

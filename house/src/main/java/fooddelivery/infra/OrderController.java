@@ -31,7 +31,7 @@ public class OrderController {
             
             optionalOrder.orElseThrow(()-> new Exception("No Entity Found"));
             Order order = optionalOrder.get();
-            order.deliveryconfirm();
+            order.deliveryconfirm(order);
             
             orderRepository.save(order);
             return order;
