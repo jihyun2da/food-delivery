@@ -1,3 +1,49 @@
+# L3
+- Microservice Implementation
+1. Saga (Pub / Sub)
+2. CQRS
+3. Compensation / Correlation
+
+- Microservice Orchestration
+1. Deploy to EKS Cluster
+2. Gateway Service Router 설치
+3. Autoscale (HPA)
+
+![image](https://user-images.githubusercontent.com/117624181/218929254-3125bf3b-2121-47bd-8779-540459405ec7.png)
+
+# Saga (Pub / Sub)
+- 구현 코드
+![image](https://user-images.githubusercontent.com/117624181/218945102-8a007aaf-cbe7-4ca6-92c7-79ef076a1ed4.png)
+![image](https://user-images.githubusercontent.com/117624181/218945273-84f230ee-b0a5-482b-a062-e23d8b050611.png)
+
+주문 후 결제가 완료되면 상점주에 데이터가 저장된다.
+![image](https://user-images.githubusercontent.com/117624181/218940874-c614449e-01f9-4963-af64-f6e41ff7562e.png)
+![image](https://user-images.githubusercontent.com/117624181/218941026-cf9070ad-204b-4589-b503-a4ee74c748c9.png)
+
+# CQRS
+- 구현 코드
+![image](https://user-images.githubusercontent.com/117624181/218945748-646e6209-ebe8-4ce9-9b4b-889459f78c3e.png)
+
+![image](https://user-images.githubusercontent.com/117624181/218946069-212d1fad-baa0-4bb9-8918-1edf4cabeba9.png)
+
+# Compensation / Correlation
+![image](https://user-images.githubusercontent.com/117624181/203258212-9c6b9d41-59cc-4994-b0c7-cb31678439d0.png)
+![image](https://user-images.githubusercontent.com/117624181/218946304-e9d89070-0b82-491d-8652-ffc3b1afc723.png)
+
+# Deploy to EKS Cluster
+![image](https://user-images.githubusercontent.com/117624181/218946385-a590df7a-cb29-4c90-9671-079a449fb047.png)
+
+# Gateway Service Router 설치
+![image](https://user-images.githubusercontent.com/117624181/218946447-d2e0dcea-137c-4235-9275-8542af549708.png)
+
+# Autoscale (HPA)
+![image](https://user-images.githubusercontent.com/117624181/218947415-215b60d2-10ad-4e7f-a817-55357a829a3f.png)
+![image](https://user-images.githubusercontent.com/117624181/218947869-cbcbe89f-0822-4a73-8386-7c9838ea9199.png)
+![image](https://user-images.githubusercontent.com/117624181/218947905-c9f3718c-d396-4776-bf11-a79a4802e139.png)
+![image](https://user-images.githubusercontent.com/117624181/218947940-edcf40f5-72c5-4537-a20f-b7e37b3d828c.png)
+
+--------------------------------------------------------------------------------------------------------------
+
 ![image](https://user-images.githubusercontent.com/487999/79708354-29074a80-82fa-11ea-80df-0db3962fb453.png)
 
 # 예제 - 음식배달
