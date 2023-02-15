@@ -13,7 +13,7 @@
 
 # Saga (Pub / Sub)
 
-![image](https://user-images.githubusercontent.com/117624181/218945102-8a007aaf-cbe7-4ca6-92c7-79ef076a1ed4.png)
+![image](https://user-images.githubusercontent.com/117624181/218950476-e135c76b-da69-4180-9a61-a39c2772ff97.png)
 ![image](https://user-images.githubusercontent.com/117624181/218945273-84f230ee-b0a5-482b-a062-e23d8b050611.png)
 
 주문 후 결제가 완료되면 상점주에 데이터가 저장된다.
