@@ -14,7 +14,7 @@
 # Saga (Pub / Sub)
 
 - 구현 코드
-- 
+
 ![image](https://user-images.githubusercontent.com/117624181/218945102-8a007aaf-cbe7-4ca6-92c7-79ef076a1ed4.png)
 ![image](https://user-images.githubusercontent.com/117624181/218945273-84f230ee-b0a5-482b-a062-e23d8b050611.png)
 
@@ -32,16 +32,21 @@
 
 # Compensation / Correlation
 
+- 주문 및 주문 취소 결과
+
 ![image](https://user-images.githubusercontent.com/117624181/203258212-9c6b9d41-59cc-4994-b0c7-cb31678439d0.png)
 ![image](https://user-images.githubusercontent.com/117624181/218946304-e9d89070-0b82-491d-8652-ffc3b1afc723.png)
 
 # Deploy to EKS Cluster
 
-![image](https://user-images.githubusercontent.com/117624181/218946385-a590df7a-cb29-4c90-9671-079a449fb047.png)
+![image](https://user-images.githubusercontent.com/117624181/218948764-67dabe0f-73cd-4e13-8b6c-f15c19367917.png)
+
 
 # Gateway Service Router 설치
 
 ![image](https://user-images.githubusercontent.com/117624181/218946447-d2e0dcea-137c-4235-9275-8542af549708.png)
+![image](https://user-images.githubusercontent.com/117624181/218948912-29d095e0-1840-4b00-9887-81e1dfb9d5f2.png)
+
 
 # Autoscale (HPA)
 
