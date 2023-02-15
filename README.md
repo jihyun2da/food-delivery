@@ -28,7 +28,7 @@
 
 # Compensation / Correlation
 
-- 주문 및 주문 취소 결과
+- 주문 및 주문 취소
 
 ![image](https://user-images.githubusercontent.com/117624181/218946304-e9d89070-0b82-491d-8652-ffc3b1afc723.png)
 
