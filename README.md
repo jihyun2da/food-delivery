@@ -45,7 +45,7 @@
 
 # Autoscale (HPA)
 
-- kubectl autoscale deployment order --cpu-percent=50 --min=1 --max=3
+- kubectl autoscale deployment house --cpu-percent=50 --min=1 --max=3
 
 ![image](https://user-images.githubusercontent.com/117624181/218947415-215b60d2-10ad-4e7f-a817-55357a829a3f.png)
 
